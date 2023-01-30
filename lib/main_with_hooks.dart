@@ -12,30 +12,91 @@ class RotationWithHooks extends HookWidget {
     return Scaffold(
       backgroundColor: Colors.black12,
       body: Center(
-        child: AnimatedBuilder(
-            animation: controller,
-            builder: (context, child) {
-              return Transform(
-                alignment: Alignment.center,
-                transform: Matrix4.identity()..rotateZ(animation),
-                child: Container(
-                  height: 100,
-                  width: 100,
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 7,
-                        spreadRadius: 5,
-                        offset: const Offset(2, 2),
-                        color: Colors.black.withOpacity(0.5),
-                      )
-                    ],
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            AnimatedBuilder(
+              animation: controller,
+              builder: (context, child) {
+                return Transform(
+                  alignment: Alignment.center,
+                  transform: Matrix4.identity()..rotateZ(animation),
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 7,
+                          spreadRadius: 5,
+                          offset: const Offset(2, 2),
+                          color: Colors.black.withOpacity(0.5),
+                        )
+                      ],
+                    ),
                   ),
+                );
+              },
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                AnimatedBuilder(
+                  animation: controller,
+                  builder: (context, child) {
+                    return Transform(
+                      alignment: Alignment.center,
+                      transform: Matrix4.identity()..rotateZ(animation),
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 7,
+                              spreadRadius: 5,
+                              offset: const Offset(2, 2),
+                              color: Colors.black.withOpacity(0.5),
+                            )
+                          ],
+                        ),
+                      ),
+                    );
+                  },
                 ),
-              );
-            }),
+                AnimatedBuilder(
+                  animation: controller,
+                  builder: (context, child) {
+                    return Transform(
+                      alignment: Alignment.center,
+                      transform: Matrix4.identity()..rotateZ(animation),
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 7,
+                              spreadRadius: 5,
+                              offset: const Offset(2, 2),
+                              color: Colors.black.withOpacity(0.5),
+                            )
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
